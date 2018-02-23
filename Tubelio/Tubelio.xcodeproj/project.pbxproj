@@ -12,6 +12,8 @@
 		64519365203CB1DB00FB3954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64519363203CB1DB00FB3954 /* Main.storyboard */; };
 		64519367203CB1DB00FB3954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64519366203CB1DB00FB3954 /* Assets.xcassets */; };
 		6451936A203CB1DB00FB3954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64519368203CB1DB00FB3954 /* LaunchScreen.storyboard */; };
+		64C6BB752040B816002B793A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6BB742040B816002B793A /* SearchVC.swift */; };
+		64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6BB762040CDC4002B793A /* AddPostVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		64519366203CB1DB00FB3954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64519369203CB1DB00FB3954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6451936B203CB1DB00FB3954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64C6BB742040B816002B793A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		64C6BB762040CDC4002B793A /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				6451935F203CB1DB00FB3954 /* AppDelegate.swift */,
 				64519361203CB1DB00FB3954 /* ViewController.swift */,
+				64C6BB742040B816002B793A /* SearchVC.swift */,
+				64C6BB762040CDC4002B793A /* AddPostVC.swift */,
 				64519363203CB1DB00FB3954 /* Main.storyboard */,
 				64519366203CB1DB00FB3954 /* Assets.xcassets */,
 				64519368203CB1DB00FB3954 /* LaunchScreen.storyboard */,
@@ -96,7 +102,8 @@
 				TargetAttributes = {
 					6451935B203CB1DB00FB3954 = {
 						CreatedOnToolsVersion = 8.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = L9D8AX3QKA;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -136,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C6BB752040B816002B793A /* SearchVC.swift in Sources */,
 				64519362203CB1DB00FB3954 /* ViewController.swift in Sources */,
+				64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */,
 				64519360203CB1DB00FB3954 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,10 +269,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
+				DEVELOPMENT_TEAM = L9D8AX3QKA;
 				INFOPLIST_FILE = Tubelio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tubelio.Tubelio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shopzee.quizapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d08887e-6a5c-4125-ad99-5846066f7e61";
+				PROVISIONING_PROFILE_SPECIFIER = "QuizApp Prod";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,10 +285,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
+				DEVELOPMENT_TEAM = L9D8AX3QKA;
 				INFOPLIST_FILE = Tubelio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tubelio.Tubelio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shopzee.quizapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5d08887e-6a5c-4125-ad99-5846066f7e61";
+				PROVISIONING_PROFILE_SPECIFIER = "QuizApp Prod";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -299,6 +316,7 @@
 				64519370203CB1DB00FB3954 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

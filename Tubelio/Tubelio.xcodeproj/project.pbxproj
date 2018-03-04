@@ -14,6 +14,8 @@
 		6451936A203CB1DB00FB3954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64519368203CB1DB00FB3954 /* LaunchScreen.storyboard */; };
 		64C6BB752040B816002B793A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6BB742040B816002B793A /* SearchVC.swift */; };
 		64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6BB762040CDC4002B793A /* AddPostVC.swift */; };
+		F9D2BCA9204C1D380032ACF9 /* PhotoCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */; };
+		F9D2BCAB204C24B00032ACF9 /* EditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		6451936B203CB1DB00FB3954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64C6BB742040B816002B793A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		64C6BB762040CDC4002B793A /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVIewCell.swift; sourceTree = "<group>"; };
+		F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,26 @@
 		6451935E203CB1DB00FB3954 /* Tubelio */ = {
 			isa = PBXGroup;
 			children = (
+				F9D2BCA7204C1D100032ACF9 /* Views */,
 				6451935F203CB1DB00FB3954 /* AppDelegate.swift */,
 				64519361203CB1DB00FB3954 /* ViewController.swift */,
 				64C6BB742040B816002B793A /* SearchVC.swift */,
 				64C6BB762040CDC4002B793A /* AddPostVC.swift */,
+				F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */,
 				64519363203CB1DB00FB3954 /* Main.storyboard */,
 				64519366203CB1DB00FB3954 /* Assets.xcassets */,
 				64519368203CB1DB00FB3954 /* LaunchScreen.storyboard */,
 				6451936B203CB1DB00FB3954 /* Info.plist */,
 			);
 			path = Tubelio;
+			sourceTree = "<group>";
+		};
+		F9D2BCA7204C1D100032ACF9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +159,8 @@
 			files = (
 				64C6BB752040B816002B793A /* SearchVC.swift in Sources */,
 				64519362203CB1DB00FB3954 /* ViewController.swift in Sources */,
+				F9D2BCA9204C1D380032ACF9 /* PhotoCollectionVIewCell.swift in Sources */,
+				F9D2BCAB204C24B00032ACF9 /* EditingVC.swift in Sources */,
 				64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */,
 				64519360203CB1DB00FB3954 /* AppDelegate.swift in Sources */,
 			);

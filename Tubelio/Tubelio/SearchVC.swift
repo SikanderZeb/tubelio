@@ -8,16 +8,13 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class SearchVC: BaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
         self.tabBarController?.tabBar.itemWidth = self.view.bounds.size.width/2
-        self.tabBarController?.tabBar.backgroundImage
-        
         self.tabBarController?.tabBar.selectionIndicatorImage = UIImage(named: "tabbg_selected")
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

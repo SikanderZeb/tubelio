@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D21249CDD8BF9BDAC3661EA /* Pods_Tubelio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EC8CA830CB547E55D87994 /* Pods_Tubelio.framework */; };
 		64519360203CB1DB00FB3954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6451935F203CB1DB00FB3954 /* AppDelegate.swift */; };
 		64519362203CB1DB00FB3954 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64519361203CB1DB00FB3954 /* ViewController.swift */; };
 		64519365203CB1DB00FB3954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64519363203CB1DB00FB3954 /* Main.storyboard */; };
@@ -17,9 +18,16 @@
 		F9D2BCA9204C1D380032ACF9 /* PhotoCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */; };
 		F9D2BCAB204C24B00032ACF9 /* EditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */; };
 		F9D2BCAD204C56020032ACF9 /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCAC204C56020032ACF9 /* ShareVC.swift */; };
+		F9E66215204DB99D00F94B74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E66214204DB99D00F94B74 /* Extensions.swift */; };
+		F9E66217204DBB2A00F94B74 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E66216204DBB2A00F94B74 /* FirebaseHelper.swift */; };
+		F9E66219204DBF5500F94B74 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E66218204DBF5500F94B74 /* Utilities.swift */; };
+		F9E6621B204DBFB600F94B74 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6621A204DBFB600F94B74 /* Constants.swift */; };
+		F9E6621D204DC03600F94B74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F9E6621C204DC03600F94B74 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E8AD92757248E3057711A27 /* Pods-Tubelio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tubelio.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tubelio/Pods-Tubelio.debug.xcconfig"; sourceTree = "<group>"; };
+		49086F1F3CF89FC684055AAB /* Pods-Tubelio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tubelio.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tubelio/Pods-Tubelio.release.xcconfig"; sourceTree = "<group>"; };
 		6451935C203CB1DB00FB3954 /* Tubelio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tubelio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6451935F203CB1DB00FB3954 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64519361203CB1DB00FB3954 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,9 +37,15 @@
 		6451936B203CB1DB00FB3954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64C6BB742040B816002B793A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		64C6BB762040CDC4002B793A /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		C3EC8CA830CB547E55D87994 /* Pods_Tubelio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tubelio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVIewCell.swift; sourceTree = "<group>"; };
 		F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingVC.swift; sourceTree = "<group>"; };
 		F9D2BCAC204C56020032ACF9 /* ShareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVC.swift; sourceTree = "<group>"; };
+		F9E66214204DB99D00F94B74 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F9E66216204DBB2A00F94B74 /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		F9E66218204DBF5500F94B74 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F9E6621A204DBFB600F94B74 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F9E6621C204DC03600F94B74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D21249CDD8BF9BDAC3661EA /* Pods_Tubelio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29BC4D2F1E0FCF5803C87025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3EC8CA830CB547E55D87994 /* Pods_Tubelio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		64519353203CB1DB00FB3954 = {
 			isa = PBXGroup;
 			children = (
 				6451935E203CB1DB00FB3954 /* Tubelio */,
 				6451935D203CB1DB00FB3954 /* Products */,
+				C1FAF961255A655DBEDF4A11 /* Pods */,
+				29BC4D2F1E0FCF5803C87025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +89,7 @@
 		6451935E203CB1DB00FB3954 /* Tubelio */ = {
 			isa = PBXGroup;
 			children = (
+				F9E66213204DB98600F94B74 /* Utilities */,
 				F9D2BCA7204C1D100032ACF9 /* Views */,
 				6451935F203CB1DB00FB3954 /* AppDelegate.swift */,
 				64519361203CB1DB00FB3954 /* ViewController.swift */,
@@ -75,8 +101,18 @@
 				64519366203CB1DB00FB3954 /* Assets.xcassets */,
 				64519368203CB1DB00FB3954 /* LaunchScreen.storyboard */,
 				6451936B203CB1DB00FB3954 /* Info.plist */,
+				F9E6621C204DC03600F94B74 /* GoogleService-Info.plist */,
 			);
 			path = Tubelio;
+			sourceTree = "<group>";
+		};
+		C1FAF961255A655DBEDF4A11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E8AD92757248E3057711A27 /* Pods-Tubelio.debug.xcconfig */,
+				49086F1F3CF89FC684055AAB /* Pods-Tubelio.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F9D2BCA7204C1D100032ACF9 /* Views */ = {
@@ -87,6 +123,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F9E66213204DB98600F94B74 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F9E66216204DBB2A00F94B74 /* FirebaseHelper.swift */,
+				F9E66214204DB99D00F94B74 /* Extensions.swift */,
+				F9E66218204DBF5500F94B74 /* Utilities.swift */,
+				F9E6621A204DBFB600F94B74 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6451936E203CB1DB00FB3954 /* Build configuration list for PBXNativeTarget "Tubelio" */;
 			buildPhases = (
+				442DA8A45744AB2904556D8A /* [CP] Check Pods Manifest.lock */,
 				64519358203CB1DB00FB3954 /* Sources */,
 				64519359203CB1DB00FB3954 /* Frameworks */,
 				6451935A203CB1DB00FB3954 /* Resources */,
+				9EB3813C5CD0A8EF8601118E /* [CP] Embed Pods Frameworks */,
+				D56B649EE63C2050AC1D32DB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6451936A203CB1DB00FB3954 /* LaunchScreen.storyboard in Resources */,
+				F9E6621D204DC03600F94B74 /* GoogleService-Info.plist in Resources */,
 				64519367203CB1DB00FB3954 /* Assets.xcassets in Resources */,
 				64519365203CB1DB00FB3954 /* Main.storyboard in Resources */,
 			);
@@ -155,17 +206,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		442DA8A45744AB2904556D8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tubelio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EB3813C5CD0A8EF8601118E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tubelio/Pods-Tubelio-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BSModalPickerView/BSModalPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSModalPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tubelio/Pods-Tubelio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D56B649EE63C2050AC1D32DB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tubelio/Pods-Tubelio-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		64519358203CB1DB00FB3954 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				64C6BB752040B816002B793A /* SearchVC.swift in Sources */,
+				F9E6621B204DBFB600F94B74 /* Constants.swift in Sources */,
 				F9D2BCAD204C56020032ACF9 /* ShareVC.swift in Sources */,
 				64519362203CB1DB00FB3954 /* ViewController.swift in Sources */,
+				F9E66215204DB99D00F94B74 /* Extensions.swift in Sources */,
+				F9E66217204DBB2A00F94B74 /* FirebaseHelper.swift in Sources */,
 				F9D2BCA9204C1D380032ACF9 /* PhotoCollectionVIewCell.swift in Sources */,
 				F9D2BCAB204C24B00032ACF9 /* EditingVC.swift in Sources */,
 				64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */,
+				F9E66219204DBF5500F94B74 /* Utilities.swift in Sources */,
 				64519360203CB1DB00FB3954 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +410,7 @@
 		};
 		6451936F203CB1DB00FB3954 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E8AD92757248E3057711A27 /* Pods-Tubelio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
@@ -303,6 +427,7 @@
 		};
 		64519370203CB1DB00FB3954 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49086F1F3CF89FC684055AAB /* Pods-Tubelio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";

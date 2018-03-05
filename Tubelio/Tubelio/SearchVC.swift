@@ -12,7 +12,11 @@ class SearchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
+        self.tabBarController?.tabBar.itemWidth = self.view.bounds.size.width/2
+        self.tabBarController?.tabBar.backgroundImage
+        
+        self.tabBarController?.tabBar.selectionIndicatorImage = UIImage(named: "tabbg_selected")
         // Do any additional setup after loading the view.
     }
 
@@ -36,5 +40,12 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+extension SearchVC: UITabBarDelegate {
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+    }
+    
 }
 

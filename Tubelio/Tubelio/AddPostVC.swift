@@ -20,7 +20,6 @@ class AddPostVC: BaseVC {
                 self.getImages()
             }
         })
-        // Do any additional setup after loading the view.
     }
 
     func getImages() {
@@ -38,7 +37,6 @@ class AddPostVC: BaseVC {
         DispatchQueue.main.async {
             self.photosCollectionView.reloadData()
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

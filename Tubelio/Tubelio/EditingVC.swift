@@ -128,7 +128,6 @@ class EditingVC: UIViewController {
     }
 }
 
-
 extension EditingVC: MPMediaPickerControllerDelegate {
     func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection) {
         mediaItems = mediaItemCollection.items

@@ -830,7 +830,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="19g-RF-zmb">
             <objects>
-                <tabBarController id="J97-Ok-2cy" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J97-Ok-2cy" sceneMemberID="viewController">
                     <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" translucent="NO" backgroundImage="tabbg" selectionIndicatorImage="tabbg_selected" id="1ke-it-2Q4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1029,7 +1029,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="u6a-qq-c6r" kind="show" id="dPb-mb-QBr"/>
+                                            <segue destination="u6a-qq-c6r" kind="show" identifier="shareSegue" id="dPb-mb-QBr"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1521,6 +1521,9 @@
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="publish:" destination="u6a-qq-c6r" eventType="touchUpInside" id="gaN-k9-FUz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1561,10 +1564,18 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="plus" id="Xy0-hU-4PE"/>
                     <navigationItem key="navigationItem" id="lA6-9K-oEi"/>
+                    <connections>
+                        <outlet property="caption" destination="fua-nI-KWI" id="rJx-Qc-FAj"/>
+                        <outlet property="facebookSwitch" destination="6KS-zH-fiQ" id="byq-Yj-tO2"/>
+                        <outlet property="googleSwitch" destination="buA-kV-XIi" id="kY5-qD-75w"/>
+                        <outlet property="imageView" destination="GWN-70-PAu" id="awr-FT-vJY"/>
+                        <outlet property="instaSwitch" destination="t5N-LN-SyG" id="Oxc-ae-jp6"/>
+                        <outlet property="twitterSwitch" destination="YhK-7L-wGY" id="Iou-sV-TPi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KL-Va-Ixz" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4684" y="1487"/>
+            <point key="canvasLocation" x="4633" y="1496"/>
         </scene>
     </scenes>
     <resources>

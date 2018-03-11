@@ -413,14 +413,14 @@
 			baseConfigurationReference = 3E8AD92757248E3057711A27 /* Pods-Tubelio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dennis Duncan (A47WZVS6D3)";
 				DEVELOPMENT_TEAM = L9D8AX3QKA;
 				INFOPLIST_FILE = Tubelio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shopzee.quizapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "afd29858-0bfa-48a8-ae77-90876a2245c3";
-				PROVISIONING_PROFILE_SPECIFIER = "QuizApp Prod";
+				PROVISIONING_PROFILE = "3ec7e2cb-b77a-4492-b670-a2f66046a9c1";
+				PROVISIONING_PROFILE_SPECIFIER = "Quiz App Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,14 +430,14 @@
 			baseConfigurationReference = 49086F1F3CF89FC684055AAB /* Pods-Tubelio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dennis Duncan (A47WZVS6D3)";
 				DEVELOPMENT_TEAM = L9D8AX3QKA;
 				INFOPLIST_FILE = Tubelio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shopzee.quizapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "afd29858-0bfa-48a8-ae77-90876a2245c3";
-				PROVISIONING_PROFILE_SPECIFIER = "QuizApp Prod";
+				PROVISIONING_PROFILE = "3ec7e2cb-b77a-4492-b670-a2f66046a9c1";
+				PROVISIONING_PROFILE_SPECIFIER = "Quiz App Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

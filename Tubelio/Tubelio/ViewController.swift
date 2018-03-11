@@ -106,6 +106,7 @@ class ViewController: BaseVC {
             Auth.auth().sendPasswordReset(withEmail: textfield.text!) { (error) in
                 SVProgressHUD.dismiss()
                 if error != nil {
+                    
                     Utilities.showAlert(self, message: (error?.localizedDescription)!, alertTitle: "Error")
                     return
                 }

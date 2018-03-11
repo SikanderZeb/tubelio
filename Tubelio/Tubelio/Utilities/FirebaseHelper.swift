@@ -18,6 +18,30 @@ class FirebaseHelper {
         
     }
     
+    public func uploadVideo(path: String, video: Data, completion: ((Error?,String?) -> Swift.Void)? = nil) {
+
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+    
+        let metadata = StorageMetadata()
+    
+        metadata.contentType = "video"
+    
+        storageRef.child(path).putData(video, metadata: metadata){(metaData,error) in
+    
+        if error != nil {
+            completion!(error,nil)
+            return
+    
+        } else{
+            //store downloadURL
+            let downloadURL = metaData!.downloadURL()!.absoluteString
+            completion!(nil,downloadURL)
+        }
+    
+        }
+    }
+    
     public func uploadImage(path: String, image: UIImage, completion: ((Error?,String?) -> Swift.Void)? = nil) {
         var data = Data()
         data = UIImageJPEGRepresentation(image, 0.2)!

@@ -19,6 +19,7 @@ class EditingVC: UIViewController {
     var mediaItems: [MPMediaItem] = []
     var audioAsset: AVAsset!
     var firstAsset: AVAsset!
+    var exportedAsset: AVURLAsset!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,9 @@ class EditingVC: UIViewController {
             let library = ALAssetsLibrary()
             if library.videoAtPathIs(compatibleWithSavedPhotosAlbum: outputURL) {
                 library.writeVideoAtPath(toSavedPhotosAlbum: outputURL, completionBlock: { (assetURL, error) in
+                    
+                    self.exportedAsset = AVURLAsset(url: session.outputURL!)
+                    self.performSegue(withIdentifier: "shareSegue", sender: self)
                     var title = ""
                     var message = ""
                     if error != nil {
@@ -124,6 +128,10 @@ class EditingVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? AVPlayerViewController {
             playerVC = vc
+        }
+        if segue.identifier == "shareSegue" {
+            let vc = segue.destination as? ShareVC
+            vc?.asset = self.exportedAsset
         }
     }
 }

@@ -433,10 +433,10 @@
             </objects>
             <point key="canvasLocation" x="1087" y="32"/>
         </scene>
-        <!--SearchVC-->
+        <!--HomeVC-->
         <scene sceneID="LLK-Xy-dzK">
             <objects>
-                <viewController id="Ugv-kP-nzx" customClass="SearchVC" customModule="Tubelio" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ugv-kP-nzx" customClass="HomeVC" customModule="Tubelio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EWY-HW-0jr"/>
                         <viewControllerLayoutGuide type="bottom" id="R0Y-pc-b17"/>
@@ -449,7 +449,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="311" id="qyC-cT-xTe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="311" id="qyC-cT-xTe" customClass="PostCell" customModule="Tubelio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="311"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qyC-cT-xTe" id="nPX-tm-SR9">
@@ -463,12 +463,16 @@
                                                         <constraint firstAttribute="height" constant="31" id="t1A-x9-Hd8"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="nSd-Bt-aS4">
-                                                    <rect key="frame" x="16" y="43" width="351" height="153"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="nSd-Bt-aS4">
+                                                    <rect key="frame" x="23" y="46" width="329" height="153"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="153" id="Kak-g1-W0a"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0x1-Gh-vio">
+                                                    <rect key="frame" x="67" y="91" width="240" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4N-hz-pl9">
                                                     <rect key="frame" x="55" y="8" width="105" height="21"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
@@ -531,9 +535,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="0x1-Gh-vio" firstAttribute="centerY" secondItem="nSd-Bt-aS4" secondAttribute="centerY" id="3Gd-1H-2e1"/>
+                                                <constraint firstItem="0x1-Gh-vio" firstAttribute="leading" secondItem="nSd-Bt-aS4" secondAttribute="leading" id="46R-mG-Ne2"/>
                                                 <constraint firstItem="65Y-ZJ-DVt" firstAttribute="centerX" secondItem="uew-AF-MGV" secondAttribute="centerX" id="4O5-Hf-yqN"/>
                                                 <constraint firstItem="0B2-q0-RTc" firstAttribute="top" secondItem="94L-ch-fOD" secondAttribute="bottom" constant="4" id="6aj-8h-NyI"/>
                                                 <constraint firstItem="94L-ch-fOD" firstAttribute="centerY" secondItem="65Y-ZJ-DVt" secondAttribute="centerY" id="7FY-9I-xd3"/>
+                                                <constraint firstItem="0x1-Gh-vio" firstAttribute="top" secondItem="nSd-Bt-aS4" secondAttribute="top" id="7PS-cF-6pC"/>
                                                 <constraint firstItem="4Eb-gL-qMg" firstAttribute="leading" secondItem="uew-AF-MGV" secondAttribute="trailing" constant="8" id="8od-rk-5kP"/>
                                                 <constraint firstItem="xrG-LX-wrr" firstAttribute="centerY" secondItem="65Y-ZJ-DVt" secondAttribute="centerY" id="9Z1-OP-7lR"/>
                                                 <constraint firstItem="b4N-hz-pl9" firstAttribute="leading" secondItem="p2S-8i-sSa" secondAttribute="trailing" constant="16" id="9ge-dK-x36"/>
@@ -542,6 +549,7 @@
                                                 <constraint firstItem="65Y-ZJ-DVt" firstAttribute="leading" secondItem="94L-ch-fOD" secondAttribute="trailing" constant="19.5" id="BaR-GV-UbW"/>
                                                 <constraint firstItem="4Eb-gL-qMg" firstAttribute="centerY" secondItem="uew-AF-MGV" secondAttribute="centerY" id="DHv-LG-QSx"/>
                                                 <constraint firstItem="nSd-Bt-aS4" firstAttribute="leading" secondItem="nPX-tm-SR9" secondAttribute="leadingMargin" constant="8" id="EMZ-cx-vTQ"/>
+                                                <constraint firstItem="0x1-Gh-vio" firstAttribute="centerX" secondItem="nSd-Bt-aS4" secondAttribute="centerX" id="Ees-Hb-mgO"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="p2S-8i-sSa" secondAttribute="leading" id="FYI-fd-fX5"/>
                                                 <constraint firstItem="uew-AF-MGV" firstAttribute="centerX" secondItem="nSd-Bt-aS4" secondAttribute="centerX" id="IzA-gd-zgQ"/>
                                                 <constraint firstItem="b4N-hz-pl9" firstAttribute="centerY" secondItem="p2S-8i-sSa" secondAttribute="centerY" id="KLw-d3-D8l"/>
@@ -557,6 +565,11 @@
                                                 <constraint firstItem="uew-AF-MGV" firstAttribute="leading" secondItem="eaa-z6-9ud" secondAttribute="trailing" constant="7.5" id="xFa-uM-UMN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="fZi-60-vUJ" id="V7S-Ul-pp5"/>
+                                            <outlet property="username" destination="b4N-hz-pl9" id="DWF-ru-CYo"/>
+                                            <outlet property="videoView" destination="0x1-Gh-vio" id="SGR-Ie-UcN"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -575,6 +588,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home" id="Fem-9w-ebU"/>
                     <navigationItem key="navigationItem" id="Yw9-lD-VmB"/>
+                    <connections>
+                        <outlet property="table" destination="hDR-el-SOg" id="uzA-XS-7Kq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfE-Ge-cJH" sceneMemberID="firstResponder"/>
             </objects>

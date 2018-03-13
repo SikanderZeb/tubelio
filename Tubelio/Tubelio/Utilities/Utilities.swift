@@ -16,8 +16,8 @@ import Firebase
 class Utilities: NSObject {
     
     //var categoriesArray: Array<Category>? = []
-//    var productsArray: Array<ProductEntity>? = []
-//    var usersArray: Array<UserEntity>? = []
+    var productsArray: Array<Post>? = []
+    var usersArray: Array<UserEntity>? = []
     
     static let shared = Utilities()
     
@@ -145,72 +145,71 @@ class Utilities: NSObject {
     
     }
     
-//    public func updateProducts(completion: (() -> Swift.Void)? = nil)  {
-//        
-//        self.updateUsers {
-//            FirebaseHelper.shared.dbref.child("products").observeSingleEvent(of: .value, with: { (snapshot) in
-//                if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
-//                    
-//                    self.productsArray = []
-//                    for snap in snapshots {
-//                        if let postDict = snap.value as? Dictionary<String, Any> {
-//                            let key = snap.key
-//                            
-//                            let form = ProductEntity(key: key, dictionary: postDict/*, category: category, subCategory: subCategory*/)
-//                        
-//                            self.productsArray?.append(form)
-//                        }
-//                    }
-//                    
-//                    
-//                }
-//                if completion != nil {
-//                    completion!()
-//                }
-//                
-//                
-//            }) { (error) in
-//                print(error.localizedDescription)
-//            }
-//        } // users closed
-//        
-//    }
-//    
-//    public func updateUsers(completion: (() -> Swift.Void)? = nil)  {
-//        FirebaseHelper.shared.dbref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
-//
-//                self.usersArray = []
-//                for snap in snapshots {
-//                    if let postDict = snap.value as? Dictionary<String, Any> {
-//                        let key = snap.key
-//                        if let dict = postDict as? Dictionary<String, String> {
-//                            let form = UserEntity(key: key, dictionary: dict)
-//                            self.usersArray?.append(form)
-//                        }
-//                    }
-//                }
-//
-//            }
-//            if completion != nil {
-//                completion!()
-//            }
-//
-//
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//    }
-//
-//    public func userFor(key: String) -> UserEntity? {
-//      let users = Utilities.shared.usersArray?.filter {
-//            (($0.key)?.range(of: key, options: [.diacriticInsensitive, .caseInsensitive]) != nil)
-//        }
-//
-//        if (users?.count)! > 0 {return (users?[0])!}
-//
-//        return nil
-//    }
+    public func updateProducts(completion: (() -> Swift.Void)? = nil)  {
+        
+        self.updateUsers {
+            FirebaseHelper.shared.dbref.child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
+                    
+                    self.productsArray = []
+                    for snap in snapshots {
+                        if let postDict = snap.value as? Dictionary<String, String> {
+                            let key = snap.key
+                            let form = Post(id: key, dict: postDict)
+                    
+                            self.productsArray?.append(form)
+                        }
+                    }
+                    
+                    
+                }
+                if completion != nil {
+                    completion!()
+                }
+                
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        } // users closed
+        
+    }
+    
+    public func updateUsers(completion: (() -> Swift.Void)? = nil)  {
+        FirebaseHelper.shared.dbref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [DataSnapshot] {
+
+                self.usersArray = []
+                for snap in snapshots {
+                    if let postDict = snap.value as? Dictionary<String, Any> {
+                        let key = snap.key
+                        if let dict = postDict as? Dictionary<String, String> {
+                            let form = UserEntity(id: key, dict: dict)
+                            self.usersArray?.append(form)
+                        }
+                    }
+                }
+
+            }
+            if completion != nil {
+                completion!()
+            }
+
+
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+
+    public func userFor(key: String) -> UserEntity? {
+      let users = Utilities.shared.usersArray?.filter {
+            (($0.id).range(of: key, options: [.diacriticInsensitive, .caseInsensitive]) != nil)
+        }
+
+        if (users?.count)! > 0 {return (users?[0])!}
+
+        return nil
+    }
 }
 
 extension Dictionary {

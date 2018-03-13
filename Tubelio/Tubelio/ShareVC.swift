@@ -26,11 +26,6 @@ class ShareVC: BaseVC {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func publish(_ sender: UIButton) {
         if Utilities.isEmpty(caption.text) {
@@ -67,7 +62,7 @@ class ShareVC: BaseVC {
                         return
                     }
                     self.navigationController?.popViewController(animated: true)
-                    Utilities.showAlert(self, message: "Product created successfully", alertTitle: "Success")
+                    Utilities.showAlert(self, message: "Video uploaded successfully", alertTitle: "Success")
                     
                 })
             })

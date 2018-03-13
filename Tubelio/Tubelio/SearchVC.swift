@@ -16,7 +16,8 @@ class SearchVC: BaseVC {
         self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.white
         self.tabBarController?.tabBar.itemWidth = self.view.bounds.size.width/2
         self.tabBarController?.tabBar.selectionIndicatorImage = UIImage(named: "tabbg_selected")
-        FirebaseHelper.shared.dbref = Database.database().reference()
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

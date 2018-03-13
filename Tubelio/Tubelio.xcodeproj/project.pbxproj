@@ -15,6 +15,11 @@
 		6451936A203CB1DB00FB3954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64519368203CB1DB00FB3954 /* LaunchScreen.storyboard */; };
 		64C6BB752040B816002B793A /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6BB742040B816002B793A /* SearchVC.swift */; };
 		64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C6BB762040CDC4002B793A /* AddPostVC.swift */; };
+		F9AD1F1A20576C36006A5EB0 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1F1920576C36006A5EB0 /* Post.swift */; };
+		F9AD1F1C20576C4A006A5EB0 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1F1B20576C4A006A5EB0 /* UserEntity.swift */; };
+		F9AD1F1E20576E96006A5EB0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1F1D20576E96006A5EB0 /* Comment.swift */; };
+		F9AD1F20205772E9006A5EB0 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1F1F205772E9006A5EB0 /* HomeVC.swift */; };
+		F9AD1F22205773D4006A5EB0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1F21205773D4006A5EB0 /* PostCell.swift */; };
 		F9D2BCA9204C1D380032ACF9 /* PhotoCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */; };
 		F9D2BCAB204C24B00032ACF9 /* EditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */; };
 		F9D2BCAD204C56020032ACF9 /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D2BCAC204C56020032ACF9 /* ShareVC.swift */; };
@@ -38,6 +43,11 @@
 		64C6BB742040B816002B793A /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		64C6BB762040CDC4002B793A /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 		C3EC8CA830CB547E55D87994 /* Pods_Tubelio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tubelio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9AD1F1920576C36006A5EB0 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F9AD1F1B20576C4A006A5EB0 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		F9AD1F1D20576E96006A5EB0 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		F9AD1F1F205772E9006A5EB0 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F9AD1F21205773D4006A5EB0 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionVIewCell.swift; sourceTree = "<group>"; };
 		F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingVC.swift; sourceTree = "<group>"; };
 		F9D2BCAC204C56020032ACF9 /* ShareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVC.swift; sourceTree = "<group>"; };
@@ -89,11 +99,13 @@
 		6451935E203CB1DB00FB3954 /* Tubelio */ = {
 			isa = PBXGroup;
 			children = (
+				F9AD1F1820576C21006A5EB0 /* Models */,
 				F9E66213204DB98600F94B74 /* Utilities */,
 				F9D2BCA7204C1D100032ACF9 /* Views */,
 				6451935F203CB1DB00FB3954 /* AppDelegate.swift */,
 				64519361203CB1DB00FB3954 /* ViewController.swift */,
 				64C6BB742040B816002B793A /* SearchVC.swift */,
+				F9AD1F1F205772E9006A5EB0 /* HomeVC.swift */,
 				64C6BB762040CDC4002B793A /* AddPostVC.swift */,
 				F9D2BCAC204C56020032ACF9 /* ShareVC.swift */,
 				F9D2BCAA204C24B00032ACF9 /* EditingVC.swift */,
@@ -115,10 +127,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F9AD1F1820576C21006A5EB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F9AD1F1920576C36006A5EB0 /* Post.swift */,
+				F9AD1F1D20576E96006A5EB0 /* Comment.swift */,
+				F9AD1F1B20576C4A006A5EB0 /* UserEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F9D2BCA7204C1D100032ACF9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				F9D2BCA8204C1D380032ACF9 /* PhotoCollectionVIewCell.swift */,
+				F9AD1F21205773D4006A5EB0 /* PostCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,9 +302,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AD1F1C20576C4A006A5EB0 /* UserEntity.swift in Sources */,
 				64C6BB752040B816002B793A /* SearchVC.swift in Sources */,
 				F9E6621B204DBFB600F94B74 /* Constants.swift in Sources */,
+				F9AD1F1E20576E96006A5EB0 /* Comment.swift in Sources */,
 				F9D2BCAD204C56020032ACF9 /* ShareVC.swift in Sources */,
+				F9AD1F1A20576C36006A5EB0 /* Post.swift in Sources */,
+				F9AD1F20205772E9006A5EB0 /* HomeVC.swift in Sources */,
 				64519362203CB1DB00FB3954 /* ViewController.swift in Sources */,
 				F9E66215204DB99D00F94B74 /* Extensions.swift in Sources */,
 				F9E66217204DBB2A00F94B74 /* FirebaseHelper.swift in Sources */,
@@ -290,6 +317,7 @@
 				64C6BB772040CDC4002B793A /* AddPostVC.swift in Sources */,
 				F9E66219204DBF5500F94B74 /* Utilities.swift in Sources */,
 				64519360203CB1DB00FB3954 /* AppDelegate.swift in Sources */,
+				F9AD1F22205773D4006A5EB0 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,14 +441,14 @@
 			baseConfigurationReference = 3E8AD92757248E3057711A27 /* Pods-Tubelio.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dennis Duncan (A47WZVS6D3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
 				DEVELOPMENT_TEAM = L9D8AX3QKA;
 				INFOPLIST_FILE = Tubelio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shopzee.quizapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3ec7e2cb-b77a-4492-b670-a2f66046a9c1";
-				PROVISIONING_PROFILE_SPECIFIER = "Quiz App Dev";
+				PROVISIONING_PROFILE = "afd29858-0bfa-48a8-ae77-90876a2245c3";
+				PROVISIONING_PROFILE_SPECIFIER = "QuizApp Prod";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -430,14 +458,14 @@
 			baseConfigurationReference = 49086F1F3CF89FC684055AAB /* Pods-Tubelio.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dennis Duncan (A47WZVS6D3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Dennis Duncan (L9D8AX3QKA)";
 				DEVELOPMENT_TEAM = L9D8AX3QKA;
 				INFOPLIST_FILE = Tubelio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shopzee.quizapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3ec7e2cb-b77a-4492-b670-a2f66046a9c1";
-				PROVISIONING_PROFILE_SPECIFIER = "Quiz App Dev";
+				PROVISIONING_PROFILE = "afd29858-0bfa-48a8-ae77-90876a2245c3";
+				PROVISIONING_PROFILE_SPECIFIER = "QuizApp Prod";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

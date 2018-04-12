@@ -18,11 +18,15 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var caption: UILabel!
     @IBOutlet weak var videoView: UIView!
     
+    @IBOutlet weak var likes: UILabel!
+    @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var views: UILabel!
     
     var playerController : AVPlayerViewController? = nil
     var passedURL : URL! = nil
     var indexPath : IndexPath! = nil
     var delegate : PostCellProtocol? = nil
+    var post: Post? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,13 +37,19 @@ class PostCell: UITableViewCell {
     
     func configCell(with post : Post, shouldPlay : Bool) {
         //something like this
+        
+        if views != nil {
+            views.text = "\(post.views.count) views"
+            comments.text = "\(post.comments.count) comments"
+            likes.text = "\(post.likes.count) High Fives"
+        }
+        
+        
         if (post.video != "") {
             let url = URL(string: post.video)
             self.passedURL = url
             if shouldPlay == true {
-                let asset = AVURLAsset(url: url!)
-                let player = AVPlayer(playerItem: AVPlayerItem(asset: asset))
-                
+                let player = AVPlayer(url: url!)
                 if self.playerController == nil {
                     playerController = AVPlayerViewController()
                 }

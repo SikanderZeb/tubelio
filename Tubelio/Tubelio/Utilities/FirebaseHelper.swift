@@ -25,7 +25,7 @@ class FirebaseHelper {
     
         let metadata = StorageMetadata()
     
-        metadata.contentType = "video"
+        metadata.contentType = "video/mp4"
     
         storageRef.child(path).putData(video, metadata: metadata){(metaData,error) in
     

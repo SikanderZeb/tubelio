@@ -42,7 +42,7 @@ class ShareVC: BaseVC {
                 
             }
             
-            let filePath = "images/posts/\(ref.key)/"
+            let filePath = "posts/\(ref.key)/"
             
             let dbref = ref
             let data = try! Data(contentsOf: self.asset.url)

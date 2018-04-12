@@ -20,10 +20,14 @@ class HomeVC : BaseVC {
         self.tabBarController?.tabBar.itemWidth = self.view.bounds.size.width/2
         self.tabBarController?.tabBar.selectionIndicatorImage = UIImage(named: "tabbg_selected")
         FirebaseHelper.shared.dbref = Database.database().reference()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         Utilities.shared.updateProducts {
             self.table.reloadData()
         }
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,7 +47,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         cell.delegate = self
         //let the cell know its indexPath
         cell.indexPath = indexPath
-        cell.configCell(with: Utilities.shared.productsArray![indexPath.row], shouldPlay: true)
+        cell.configCell(with: Utilities.shared.productsArray![indexPath.row], shouldPlay: false)
         return cell
     }
     

@@ -13,8 +13,9 @@ class Post {
     var user: UserEntity? = nil
     var video: String = ""
     var caption: String = ""
-    var likes: [String] = []
+    var likes: [UserEntity] = []
     var comments: [Comment] = []
+    var views: [UserEntity] = []
     
     public init(id: String, dict: Dictionary<String, String>) {
         self.id = id
@@ -31,6 +32,9 @@ class Post {
 //        }
 //        if dict["caption"] != nil {
 //            caption = dict["caption"]!
+//        }
+//        if dict["views"] != nil {
+//            views = dict["views"]!
 //        }
     }
 }

@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/EditingVC.swift"
-            timestampString = "542473346.893585"
+            timestampString = "545211877.8773659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/Utilities/FirebaseHelper.swift"
-            timestampString = "542473346.893714"
+            timestampString = "542706747.306289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/Utilities/FirebaseHelper.swift"
-            timestampString = "542473346.8937761"
+            timestampString = "542706747.306614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/ShareVC.swift"
-            timestampString = "542603826.511655"
+            timestampString = "542706747.306679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "50"
@@ -74,7 +74,7 @@
                   moduleName = "Tubelio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sikanderzeb/Desktop/Development/tubelio/Tubelio/Tubelio/ShareVC.swift"
-                  timestampString = "542603826.658273"
+                  timestampString = "545211878.125796"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "50"
@@ -89,7 +89,7 @@
                   moduleName = "Tubelio"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/sikanderzeb/Desktop/Development/tubelio/Tubelio/Tubelio/ShareVC.swift"
-                  timestampString = "542603826.660561"
+                  timestampString = "545211878.128693"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "51"
@@ -102,11 +102,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/EditingVC.swift"
-            timestampString = "542473346.893968"
+            timestampString = "545211877.877576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -118,64 +118,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/EditingVC.swift"
-            timestampString = "542473346.894039"
+            timestampString = "545211877.8776211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
             endingLineNumber = "148"
-            landmarkName = "mediaPicker(_:didPickMediaItems:)"
+            landmarkName = "merge()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/EditingVC.swift"
-            timestampString = "542473346.894102"
+            timestampString = "545211877.8776571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
             endingLineNumber = "145"
-            landmarkName = "mediaPicker(_:didPickMediaItems:)"
+            landmarkName = "merge()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/EditingVC.swift"
-            timestampString = "542473346.894154"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
-            landmarkName = "mediaPicker(_:didPickMediaItems:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tubelio/EditingVC.swift"
-            timestampString = "542473346.8942029"
+            timestampString = "545211877.877692"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "147"
             endingLineNumber = "147"
-            landmarkName = "mediaPicker(_:didPickMediaItems:)"
+            landmarkName = "merge()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/Views/PostCell.swift"
-            timestampString = "542603826.512168"
+            timestampString = "542706747.30705"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "configCell(with:shouldPlay:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/Views/PostCell.swift"
-            timestampString = "542603826.512727"
+            timestampString = "542706747.3072701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "configCell(with:shouldPlay:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -310,16 +294,104 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tubelio/Views/PostCell.swift"
-            timestampString = "542603826.5131609"
+            timestampString = "542706747.307338"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "configCell(with:shouldPlay:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tubelio/Utilities/FirebaseHelper.swift"
+            timestampString = "542706747.307402"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "uploadVideo(path:video:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tubelio.FirebaseHelper.uploadVideo(path: Swift.String, video: Foundation.Data, completion: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Tubelio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sikanderzeb/Desktop/Development/tubelio/Tubelio/Tubelio/Utilities/FirebaseHelper.swift"
+                  timestampString = "542705632.023371"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__ObjC.StorageMetadata&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Tubelio.FirebaseHelper.uploadVideo(path: Swift.String, video: Foundation.Data, completion: Swift.Optional&lt;(Swift.Optional&lt;Swift.Error&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Tubelio"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sikanderzeb/Desktop/Development/tubelio/Tubelio/Tubelio/Utilities/FirebaseHelper.swift"
+                  timestampString = "542705632.02465"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "Yes"
+            filePath = "Tubelio/Models/UserEntity.swift"
+            timestampString = "542706747.307457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init(id:dict:)"
+            landmarkType = "7">
+            <Actions>
+               <BreakpointActionProxy
+                  ActionExtensionID = "Xcode.BreakpointAction.DebuggerCommand">
+                  <ActionContent
+                     consoleCommand = "po dict">
+                  </ActionContent>
+               </BreakpointActionProxy>
+            </Actions>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Tubelio/SearchVC.swift"
+            timestampString = "542706747.3079489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "search()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

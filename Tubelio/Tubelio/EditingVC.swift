@@ -66,6 +66,77 @@ class EditingVC: UIViewController {
         audioAsset = nil
     }
     
+    func addText(composition: AVMutableVideoComposition) {
+        // 1 - Set up the text layer
+        let subtitle1Text = CATextLayer()
+        subtitle1Text.font = UIFont(name: "Helvetica-Bold", size: 15)
+        subtitle1Text.frame = CGRect(x: 0, y: 0, width: 320, height: 100)
+        subtitle1Text.string = "Hello World"
+        subtitle1Text.alignmentMode = kCAAlignmentCenter
+        subtitle1Text.foregroundColor = UIColor.red.cgColor
+        subtitle1Text.backgroundColor = UIColor.white.cgColor
+        
+        // 2 - The usual overlay
+        let overlayLayer = CALayer()
+        overlayLayer.addSublayer(subtitle1Text)
+        overlayLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        overlayLayer.masksToBounds = true
+        
+        let parentLayer = CALayer()
+        let videoLayer = CALayer()
+        parentLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        videoLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        parentLayer.addSublayer(videoLayer)
+        parentLayer.addSublayer(overlayLayer)
+        
+        composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+        
+        
+        // 4 - Get path
+        let url = getExportURL()
+        
+        // 5 - Create Exporter
+        
+//        guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
+//        exporter.outputURL = url
+//        exporter.outputFileType = AVFileTypeQuickTimeMovie
+//        exporter.shouldOptimizeForNetworkUse = true
+//        
+//        // 6 - Perform the Export
+//        exporter.exportAsynchronously() {
+//            DispatchQueue.main.async {
+//                self.exportDidFinish(session: exporter)
+//            }
+//        }
+    }
+    
+    func addTiltEffect(composition: AVMutableVideoComposition) {
+        // 1 - Layer setup
+        let parentLayer = CALayer()
+        let videoLayer = CALayer()
+        parentLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        videoLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        parentLayer.addSublayer(videoLayer)
+        
+        // 2 - Set up the transform
+        var identityTransform = CATransform3DIdentity;
+        
+        // 3 - Pick the direction
+       // if (_tiltSegment.selectedSegmentIndex == 0) {
+            identityTransform.m34 = 1.0 / 1000; // greater the denominator lesser will be the transformation
+       // } else if (_tiltSegment.selectedSegmentIndex == 1) {
+       //     identityTransform.m34 = 1.0 / -1000; // lesser the denominator lesser will be the transformation
+       // }
+        
+        // 4 - Rotate
+        videoLayer.transform = CATransform3DRotate(identityTransform, .pi/6.0, 1.0, 0.0, 0.0);
+        
+        // 5 - Composition
+        
+        composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
+        
+    }
+    
     func merge() {
         // 1 - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         let mixComposition = AVMutableComposition()
@@ -102,18 +173,16 @@ class EditingVC: UIViewController {
             }
         }
         
+        let compositionIns = AVMutableVideoCompositionInstruction()
+        
+        //addText(composition: compositionIns)
+        
         // 4 - Get path
-        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .short
-        let date = dateFormatter.string(from: NSDate() as Date)
-        let savePath = (documentDirectory as NSString).appendingPathComponent("mergeVideo-\(date).mov")
-        let url = NSURL(fileURLWithPath: savePath)
+        let url = getExportURL()
         
         // 5 - Create Exporter
         guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
-        exporter.outputURL = url as URL
+        exporter.outputURL = url
         exporter.outputFileType = AVFileTypeQuickTimeMovie
         exporter.shouldOptimizeForNetworkUse = true
         
@@ -123,6 +192,17 @@ class EditingVC: UIViewController {
                 self.exportDidFinish(session: exporter)
             }
         }
+    }
+    
+    func getExportURL() -> URL {
+        let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        let date = dateFormatter.string(from: NSDate() as Date)
+        let savePath = (documentDirectory as NSString).appendingPathComponent("mergeVideo-\(date).mov")
+        
+        return NSURL(fileURLWithPath: savePath) as URL
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

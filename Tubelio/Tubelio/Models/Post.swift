@@ -17,24 +17,31 @@ class Post {
     var comments: [Comment] = []
     var views: [UserEntity] = []
     
-    public init(id: String, dict: Dictionary<String, String>) {
+    public init(id: String, dict: Dictionary<String, Any>) {
         self.id = id
         
         if dict["video"] != nil {
-            video = dict["video"]!
+            video = dict["video"] as! String
         }
         if dict["caption"] != nil {
-            caption = dict["caption"]!
+            caption = dict["caption"] as! String
         }
-        user = Utilities.shared.userFor(key: dict["userKey"]!)
-//        if likes["likes"] != nil {
-//            likes = dict["caption"]!
-//        }
-//        if dict["caption"] != nil {
-//            caption = dict["caption"]!
-//        }
-//        if dict["views"] != nil {
-//            views = dict["views"]!
-//        }
+        user = Utilities.shared.userFor(key: dict["userKey"] as! String)
+        if let array = dict["likes"] as? Dictionary<String, Any> {
+            for d in array.keys {
+                if let u = Utilities.shared.userFor(key: d) {
+                    self.likes.append(u)
+                }
+            }
+        }
+        
+        if let array = dict["comments"] as? Dictionary<String, Any> {
+            for d in array.keys {
+                var dict = array[d] as! Dictionary<String, String>
+                dict["id"] = d
+                self.comments.append(Comment(dict: dict))
+            }
+        }
+        
     }
 }

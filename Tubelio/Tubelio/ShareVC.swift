@@ -33,6 +33,7 @@ class ShareVC: BaseVC {
             return
         }
         
+        let weakself = self
         let block = {(error: Error?, ref: DatabaseReference ) in
             if error != nil {
                 SVProgressHUD.dismiss()
@@ -61,7 +62,7 @@ class ShareVC: BaseVC {
                         Utilities.showAlert(self, message: "Error updating image path \(error?.localizedDescription ?? "")", alertTitle: "Error")
                         return
                     }
-                    self.navigationController?.popViewController(animated: true)
+                    weakself.navigationController?.popToRootViewController(animated: true)
                     Utilities.showAlert(self, message: "Video uploaded successfully", alertTitle: "Success")
                     
                 })

@@ -48,23 +48,25 @@ class PostCell: UITableViewCell {
         if (post.video != "") {
             let url = URL(string: post.video)
             self.passedURL = url
+            let player = AVPlayer(url: url!)
             if shouldPlay == true {
-                let player = AVPlayer(url: url!)
+                
                 if self.playerController == nil {
                     playerController = AVPlayerViewController()
                 }
                 
-                playerController?.player = player
-                playerController?.showsPlaybackControls = true
+                
                 playerController?.player?.play()
             }
             else {
                 if self.playerController != nil {
                     self.playerController?.player?.pause()
-                    self.playerController?.player = nil
+                    //self.playerController?.player = nil
                 }
                 //show video thumbnail with play button on it.
             }
+            playerController?.player = player
+            playerController?.showsPlaybackControls = true
         }
         self.username.text = post.user?.name
         self.caption.text = post.caption

@@ -12,7 +12,7 @@ import AVKit
 import MediaPlayer
 import AssetsLibrary
 
-class EditingVC: UIViewController {
+class EditingVC: BaseVC {
     
     var selectedPHAsset: PHAsset!
     var playerVC: AVPlayerViewController!
@@ -20,6 +20,7 @@ class EditingVC: UIViewController {
     var audioAsset: AVAsset!
     var firstAsset: AVAsset!
     var exportedAsset: AVURLAsset!
+    var textOverVideo = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,7 @@ class EditingVC: UIViewController {
                     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    self.navigationController?.popToRootViewController(animated: true)
                 })
             }
         }
@@ -66,12 +68,12 @@ class EditingVC: UIViewController {
         audioAsset = nil
     }
     
-    func addText(composition: AVMutableVideoComposition) {
+    func addText(composition: AVMutableVideoComposition, size: CGSize) {
         // 1 - Set up the text layer
         let subtitle1Text = CATextLayer()
         subtitle1Text.font = UIFont(name: "Helvetica-Bold", size: 15)
-        subtitle1Text.frame = CGRect(x: 0, y: 0, width: 320, height: 100)
-        subtitle1Text.string = "Hello World"
+        subtitle1Text.frame = CGRect(x: 0, y: 0, width: size.width, height: 100)
+        subtitle1Text.string = textOverVideo
         subtitle1Text.alignmentMode = kCAAlignmentCenter
         subtitle1Text.foregroundColor = UIColor.red.cgColor
         subtitle1Text.backgroundColor = UIColor.white.cgColor
@@ -79,43 +81,28 @@ class EditingVC: UIViewController {
         // 2 - The usual overlay
         let overlayLayer = CALayer()
         overlayLayer.addSublayer(subtitle1Text)
-        overlayLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        overlayLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         overlayLayer.masksToBounds = true
         
         let parentLayer = CALayer()
         let videoLayer = CALayer()
-        parentLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
-        videoLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         parentLayer.addSublayer(videoLayer)
         parentLayer.addSublayer(overlayLayer)
         
         composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
         
+        //return AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
         
-        // 4 - Get path
-        let url = getExportURL()
-        
-        // 5 - Create Exporter
-        
-//        guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
-//        exporter.outputURL = url
-//        exporter.outputFileType = AVFileTypeQuickTimeMovie
-//        exporter.shouldOptimizeForNetworkUse = true
-//        
-//        // 6 - Perform the Export
-//        exporter.exportAsynchronously() {
-//            DispatchQueue.main.async {
-//                self.exportDidFinish(session: exporter)
-//            }
-//        }
     }
     
-    func addTiltEffect(composition: AVMutableVideoComposition) {
+    func addTiltEffect(composition: AVMutableVideoComposition, size: CGSize) {
         // 1 - Layer setup
         let parentLayer = CALayer()
         let videoLayer = CALayer()
-        parentLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
-        videoLayer.frame = CGRect(x: 0, y: 0, width: 320, height: 200)
+        parentLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        videoLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         parentLayer.addSublayer(videoLayer)
         
         // 2 - Set up the transform
@@ -136,6 +123,7 @@ class EditingVC: UIViewController {
         composition.animationTool = AVVideoCompositionCoreAnimationTool(postProcessingAsVideoLayer: videoLayer, in: parentLayer)
         
     }
+    
     
     func merge() {
         // 1 - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
@@ -168,20 +156,64 @@ class EditingVC: UIViewController {
                 try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, /*CMTimeAdd(*/firstAsset.duration/*secondAsset.duration)*/),
                                                of: loadedAudioAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
                                                at: kCMTimeZero)
-            } catch _ {
-                print("Failed to load audio track")
+            } catch  {
+                print("Failed to load audio track \(error)")
             }
         }
         
-        let compositionIns = AVMutableVideoCompositionInstruction()
+        let instruction = AVMutableVideoCompositionInstruction()
+        instruction.timeRange = CMTimeRangeMake(kCMTimeZero, firstAsset.duration)
+        let instructionLayer = AVMutableVideoCompositionLayerInstruction(assetTrack: firstTrack)
         
-        //addText(composition: compositionIns)
+        var videoAssetOrientation_ : UIImageOrientation  = UIImageOrientation.up
+        var isVideoAssetPortrait_  = false
+        let videoTransform: CGAffineTransform = firstTrack.preferredTransform;
+        if (videoTransform.a == 0 && videoTransform.b == 1.0 && videoTransform.c == -1.0 && videoTransform.d == 0) {
+            videoAssetOrientation_ = .right;
+            isVideoAssetPortrait_ = true;
+        }
+        if (videoTransform.a == 0 && videoTransform.b == -1.0 && videoTransform.c == 1.0 && videoTransform.d == 0) {
+            videoAssetOrientation_ =  .left;
+            isVideoAssetPortrait_ = true;
+        }
+        if (videoTransform.a == 1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == 1.0) {
+            videoAssetOrientation_ =  .up;
+        }
+        if (videoTransform.a == -1.0 && videoTransform.b == 0 && videoTransform.c == 0 && videoTransform.d == -1.0) {
+            videoAssetOrientation_ = .down;
+        }
+        
+        var naturalSize: CGSize;
+        if(isVideoAssetPortrait_){
+            
+            naturalSize = CGSize(width: firstTrack.naturalSize.height, height: firstTrack.naturalSize.width);
+        } else {
+            naturalSize = firstTrack.naturalSize;
+        }
+        
+        instructionLayer.setTransform(firstTrack.preferredTransform, at: kCMTimeZero)
+        instructionLayer.setOpacity(0.0, at: firstAsset.duration)
+    
+        instruction.layerInstructions = [instructionLayer]
+        
+        let compositionIns = AVMutableVideoComposition()
+        compositionIns.instructions = [instruction]
+        compositionIns.renderSize = CGSize(width: naturalSize.width, height: naturalSize.height)
+        compositionIns.frameDuration = CMTimeMake(1, 30)
+        if textOverVideo.count > 0 {
+            addText(composition: compositionIns, size: naturalSize)
+        }
+        else {
+            addTiltEffect(composition: compositionIns, size: naturalSize)
+        }
         
         // 4 - Get path
         let url = getExportURL()
         
         // 5 - Create Exporter
         guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
+        exporter.videoComposition = compositionIns
+        
         exporter.outputURL = url
         exporter.outputFileType = AVFileTypeQuickTimeMovie
         exporter.shouldOptimizeForNetworkUse = true
@@ -203,6 +235,20 @@ class EditingVC: UIViewController {
         let savePath = (documentDirectory as NSString).appendingPathComponent("mergeVideo-\(date).mov")
         
         return NSURL(fileURLWithPath: savePath) as URL
+    }
+    
+    @IBAction func tabChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            let alert = UIAlertController(title: "Enter text for video", message: "", preferredStyle: .alert)
+            alert.addTextField { (textfield) in
+                
+            }
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                let textfield = alert.textFields![0]
+                self.textOverVideo = textfield.text!
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

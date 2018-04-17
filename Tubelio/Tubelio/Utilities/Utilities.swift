@@ -153,10 +153,10 @@ class Utilities: NSObject {
                     
                     self.productsArray = []
                     for snap in snapshots {
-                        if let postDict = snap.value as? Dictionary<String, String> {
+                        if let postDict = snap.value as? Dictionary<String, Any> {
                             let key = snap.key
                             let form = Post(id: key, dict: postDict)
-                    
+                            
                             self.productsArray?.append(form)
                         }
                     }

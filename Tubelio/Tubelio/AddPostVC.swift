@@ -44,6 +44,7 @@ class AddPostVC: BaseVC {
             vc.selectedPHAsset = images[photosCollectionView.indexPathsForSelectedItems![0].row]
         }
     }
+    
 }
 
 extension AddPostVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -51,6 +52,7 @@ extension AddPostVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.view.frame.width * 0.32
         let height = self.view.frame.height * 0.179910045
@@ -68,6 +70,7 @@ extension AddPostVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoCollectionVIewCell

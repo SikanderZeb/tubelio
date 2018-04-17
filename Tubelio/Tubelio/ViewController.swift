@@ -159,4 +159,8 @@ class BaseVC: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func goBack(_ sender: UIButton) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }

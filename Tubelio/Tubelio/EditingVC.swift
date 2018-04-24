@@ -21,6 +21,7 @@ class EditingVC: BaseVC {
     var firstAsset: AVAsset!
     var exportedAsset: AVURLAsset!
     var textOverVideo = ""
+    var scaleDuration = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +61,17 @@ class EditingVC: BaseVC {
                     self.navigationController?.popToRootViewController(animated: true)
                 })
             }
+            
+            //activityMonitor.stopAnimating()
+            firstAsset = nil
+            //secondAsset = nil
+            audioAsset = nil
+        }
+        else {
+            let error = session.error
+            print("export error \(error)")
         }
         
-        //activityMonitor.stopAnimating()
-        firstAsset = nil
-        //secondAsset = nil
-        audioAsset = nil
     }
     
     func addText(composition: AVMutableVideoComposition, size: CGSize) {
@@ -124,17 +130,24 @@ class EditingVC: BaseVC {
         
     }
     
-    
     func merge() {
         // 1 - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         let mixComposition = AVMutableComposition()
         
         // 2 - Video track
         let firstTrack = mixComposition.addMutableTrack(withMediaType: AVMediaTypeVideo, preferredTrackID: Int32(kCMPersistentTrackID_Invalid))
+        let videoScaleFactor = Int64(2.0)
+        var scaledDuration = firstAsset.duration
+        if scaleDuration == true {
+            scaledDuration = CMTimeMake(firstAsset.duration.value * videoScaleFactor, firstAsset.duration.timescale)
+        }
+        
         do {
             try firstTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, firstAsset.duration),
                                            of: firstAsset.tracks(withMediaType: AVMediaTypeVideo)[0] ,
                                            at: kCMTimeZero)
+            firstTrack.scaleTimeRange(CMTimeRangeMake(kCMTimeZero, firstAsset.duration), toDuration: scaledDuration)
+
         } catch _ {
             print("Failed to load first track")
         }
@@ -156,13 +169,14 @@ class EditingVC: BaseVC {
                 try audioTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, /*CMTimeAdd(*/firstAsset.duration/*secondAsset.duration)*/),
                                                of: loadedAudioAsset.tracks(withMediaType: AVMediaTypeAudio)[0] ,
                                                at: kCMTimeZero)
+                audioTrack.scaleTimeRange(CMTimeRangeMake(kCMTimeZero, firstAsset.duration), toDuration: scaledDuration)
             } catch  {
                 print("Failed to load audio track \(error)")
             }
         }
         
         let instruction = AVMutableVideoCompositionInstruction()
-        instruction.timeRange = CMTimeRangeMake(kCMTimeZero, firstAsset.duration)
+        instruction.timeRange = CMTimeRangeMake(kCMTimeZero, scaledDuration )
         let instructionLayer = AVMutableVideoCompositionLayerInstruction(assetTrack: firstTrack)
         
         var videoAssetOrientation_ : UIImageOrientation  = UIImageOrientation.up
@@ -213,8 +227,8 @@ class EditingVC: BaseVC {
         // 5 - Create Exporter
         guard let exporter = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality) else { return }
         exporter.videoComposition = compositionIns
-        
         exporter.outputURL = url
+        
         exporter.outputFileType = AVFileTypeQuickTimeMovie
         exporter.shouldOptimizeForNetworkUse = true
         
@@ -248,6 +262,10 @@ class EditingVC: BaseVC {
                 self.textOverVideo = textfield.text!
             }))
             self.present(alert, animated: true, completion: nil)
+        }
+        
+        if sender.selectedSegmentIndex == 1 { //slow motion
+            scaleDuration = true
         }
     }
     
